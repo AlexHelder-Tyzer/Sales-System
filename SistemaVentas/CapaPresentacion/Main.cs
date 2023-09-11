@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using FontAwesome.Sharp;
+using System.Runtime.InteropServices;
 
 namespace CapaPresentacion
 {
@@ -27,6 +28,11 @@ namespace CapaPresentacion
             bordeIzqBtn = new Panel();
             bordeIzqBtn.Size = new Size(7, 45); //tamaño del borde
             panelMenuLateral.Controls.Add(bordeIzqBtn); // agregar el borde a los controles del menu lateral
+            // form
+            this.Text = "";
+            this.ControlBox = false;
+            this.DoubleBuffered = true;  // reducir el parpadeo en los graficos del form
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         /************* METODOS ***********/
@@ -50,6 +56,11 @@ namespace CapaPresentacion
                 bordeIzqBtn.Location = new Point(0, botonActivo.Location.Y);
                 bordeIzqBtn.Visible = true;
                 bordeIzqBtn.BringToFront(); // traemos al frente el boton
+
+                // Icono del formulario hijo actual
+                iconCurrentChildForm.IconChar = botonActivo.IconChar;
+                iconCurrentChildForm.IconColor = color;
+                lblTitleChildForm.Text = botonActivo.Text;
             }
         }
 
@@ -164,63 +175,46 @@ namespace CapaPresentacion
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, RGBColors.color4);
-            //...
-            //Your code
-            //..
+            openChildForm(new frmUsuarios());
             hideSubMenu(); // cerrar el submenu
         }
 
         private void btnRegistrarCompra_Click(object sender, EventArgs e)
         {
-            //...
-            //Your code
-            //..
             hideSubMenu(); // cerrar el submenu
         }
 
         private void btnVerDetalleCompra_Click(object sender, EventArgs e)
         {
-            //...
-            //Your code
-            //..
             hideSubMenu(); // cerrar el submenu
         }
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            //...
-            //Your code
-            //..
             hideSubMenu(); // cerrar el submenu
         }
 
         private void btnVerDetalleVenta_Click(object sender, EventArgs e)
         {
-            //...
-            //Your code
-            //..
             hideSubMenu(); // cerrar el submenu
         }
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
-            //...
-            //Your code
-            //..
+            openChildForm(new frmCategoria());
             hideSubMenu(); // cerrar el submenu
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            //...
-            //Your code
-            //..
+            openChildForm(new frmProducto());
             hideSubMenu(); // cerrar el submenu
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, RGBColors.color5);
+            openChildForm(new frmClientes());
             //...
             //Your code
             //..
@@ -276,6 +270,20 @@ namespace CapaPresentacion
         {
             DesactivarBoton();
             bordeIzqBtn.Visible = false;
+            iconCurrentChildForm.IconChar = IconChar.Home;
+            iconCurrentChildForm.IconColor = Color.Black;
+            lblTitleChildForm.Text = "Home";
+        }
+
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        private void panelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
