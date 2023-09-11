@@ -1,0 +1,6 @@
+C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaEntidad\obj\Debug\CapaEntidad.pdb
