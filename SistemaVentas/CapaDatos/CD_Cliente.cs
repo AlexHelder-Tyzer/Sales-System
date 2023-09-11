@@ -20,7 +20,6 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("SELECT id_cliente, documento, nombre_completo, correo, telefono, estado FROM Cliente");
-
                     SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
                     cmd.CommandType = CommandType.Text;
 
