@@ -1,9 +1,0 @@
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\bin\Debug\CapaDatos.dll
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\bin\Debug\CapaDatos.pdb
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\bin\Debug\CapaEntidad.dll
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\bin\Debug\CapaEntidad.pdb
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\obj\Debug\CapaDatos.dll
-C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaDatos\obj\Debug\CapaDatos.pdb
