@@ -415,4 +415,93 @@ GO
 SELECT id_cliente, documento, nombre_completo, correo, telefono, estado FROM Cliente
 
 
-select * from usuario
+select * from Cliente
+
+
+/************* TABLA PROVEEDORES ************/
+
+/* PROCEDIMINETO ALMACENADO REGISTRAR CLIENTES */
+CREATE PROC SP_RegistrarProveedor(
+	@documento varchar(50),
+	@razon_social varchar(100),
+	@correo varchar(100),
+	@telefono varchar(50),
+	@estado bit,
+
+	@resultado int output,
+	@mensaje varchar(500) output
+)
+AS
+BEGIN
+	SET @resultado = 0
+	DECLARE @id_persona INT
+
+	IF NOT EXISTS(SELECT * FROM Proveedor WHERE documento = @documento)
+	BEGIN
+		INSERT INTO Proveedor(documento, razon_social, correo, telefono, estado) VALUES (@documento, @razon_social, @correo, @telefono,  @estado)
+		SET @resultado = SCOPE_IDENTITY()
+	END
+	ELSE
+	BEGIN
+		SET @mensaje = 'El cliente ya ha sido registrado'
+	END
+END
+GO
+
+/* PROCEDIMINETO ALMACENADO EDITAR CLIENTE */
+CREATE PROC SP_EditarProveedor(
+	@id_proveedor int,
+	@documento varchar(50),
+	@razon_social varchar(100),
+	@correo varchar(100),
+	@telefono varchar(50),
+	@estado bit,
+
+	@resultado int output,
+	@mensaje varchar(500) output
+)
+AS
+BEGIN
+	SET @resultado = 1
+	IF NOT EXISTS(SELECT * FROM Proveedor WHERE documento = @documento AND id_proveedor != @id_proveedor)
+	BEGIN
+		UPDATE Proveedor SET
+		documento = @documento,
+		razon_social = @razon_social,
+		correo = @correo,
+		telefono = @telefono,
+		estado = @estado
+		WHERE id_proveedor = @id_proveedor
+	END
+	ELSE
+	BEGIN
+		SET @resultado = 0
+		SET @mensaje = 'El cliente ya ha sido registrado'
+	END
+END
+GO
+
+/* PROCEDIMINETO ALMACENADO ELIMINAR CLIENTE */
+CREATE PROC SP_EliminarProveedor(
+	@id_proveedor int,
+
+	@resultado int output,
+	@mensaje varchar(500) output
+)
+AS
+BEGIN
+	SET @resultado = 1
+	IF NOT EXISTS(SELECT * FROM Proveedor P
+	INNER JOIN Compra C ON C.id_proveedor = P.id_proveedor
+	WHERE P.id_proveedor = @id_proveedor)
+	BEGIN
+		DELETE TOP(1) FROM Proveedor 
+		WHERE id_proveedor = @id_proveedor
+	END
+	ELSE
+	BEGIN
+		SET @resultado = 0
+		SET @mensaje = 'El proveedor se encuentra relacionado a una compra'
+	END
+END
+GO

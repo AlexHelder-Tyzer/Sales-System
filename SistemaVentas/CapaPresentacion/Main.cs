@@ -126,15 +126,6 @@ namespace CapaPresentacion
         //    showSubMenu(panelMediaSubMenu);
         //}
 
-        //private void btnEqualizer_Click(object sender, EventArgs e)
-        //{
-        //    openChildForm(new frmUsuarios());
-        //    //...
-        //    // Your code
-        //    //...
-        //    hideSubMenu(); // esto se hara para cada boton del submenu
-        //}
-
 
         private Form activeForm = null;
         private void openChildForm(Form childForm)
@@ -224,6 +215,7 @@ namespace CapaPresentacion
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, RGBColors.color6);
+            openChildForm(new frmProveedores());
             //...
             //Your code
             //..
