@@ -50,10 +50,11 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.PictureBox();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnNegocio = new FontAwesome.Sharp.IconButton();
             this.panelMenuLateral.SuspendLayout();
             this.panelSubMenuMantenedor.SuspendLayout();
             this.panelSubMenuVentas.SuspendLayout();
@@ -96,7 +97,7 @@
             this.btnCerrarSesion.IconColor = System.Drawing.Color.Black;
             this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesion.IconSize = 32;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 806);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 854);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.btnCerrarSesion.Size = new System.Drawing.Size(233, 45);
@@ -116,7 +117,7 @@
             this.btnAcercaDe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAcercaDe.IconSize = 32;
             this.btnAcercaDe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcercaDe.Location = new System.Drawing.Point(0, 761);
+            this.btnAcercaDe.Location = new System.Drawing.Point(0, 809);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.btnAcercaDe.Size = new System.Drawing.Size(233, 45);
@@ -137,7 +138,7 @@
             this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReportes.IconSize = 32;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 716);
+            this.btnReportes.Location = new System.Drawing.Point(0, 764);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Padding = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.btnReportes.Size = new System.Drawing.Size(233, 45);
@@ -158,7 +159,7 @@
             this.btnProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProveedores.IconSize = 32;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 671);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 719);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Padding = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.btnProveedores.Size = new System.Drawing.Size(233, 45);
@@ -179,7 +180,7 @@
             this.btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClientes.IconSize = 32;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 626);
+            this.btnClientes.Location = new System.Drawing.Point(0, 674);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.btnClientes.Size = new System.Drawing.Size(233, 45);
@@ -193,12 +194,13 @@
             // panelSubMenuMantenedor
             // 
             this.panelSubMenuMantenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(188)))), ((int)(((byte)(246)))));
+            this.panelSubMenuMantenedor.Controls.Add(this.btnNegocio);
             this.panelSubMenuMantenedor.Controls.Add(this.btnProducto);
             this.panelSubMenuMantenedor.Controls.Add(this.btnCategoria);
             this.panelSubMenuMantenedor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuMantenedor.Location = new System.Drawing.Point(0, 524);
             this.panelSubMenuMantenedor.Name = "panelSubMenuMantenedor";
-            this.panelSubMenuMantenedor.Size = new System.Drawing.Size(233, 102);
+            this.panelSubMenuMantenedor.Size = new System.Drawing.Size(233, 150);
             this.panelSubMenuMantenedor.TabIndex = 7;
             // 
             // btnProducto
@@ -465,6 +467,15 @@
             this.panelBarraTitulo.TabIndex = 3;
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             // 
+            // lblTitleChildForm
+            // 
+            this.lblTitleChildForm.AutoSize = true;
+            this.lblTitleChildForm.Location = new System.Drawing.Point(55, 21);
+            this.lblTitleChildForm.Name = "lblTitleChildForm";
+            this.lblTitleChildForm.Size = new System.Drawing.Size(45, 17);
+            this.lblTitleChildForm.TabIndex = 1;
+            this.lblTitleChildForm.Text = "Home";
+            // 
             // iconCurrentChildForm
             // 
             this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(130)))), ((int)(((byte)(243)))));
@@ -477,15 +488,6 @@
             this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
-            // 
-            // lblTitleChildForm
-            // 
-            this.lblTitleChildForm.AutoSize = true;
-            this.lblTitleChildForm.Location = new System.Drawing.Point(55, 21);
-            this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(45, 17);
-            this.lblTitleChildForm.TabIndex = 1;
-            this.lblTitleChildForm.Text = "Home";
             // 
             // panel1
             // 
@@ -503,6 +505,27 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(980, 505);
             this.panelChildForm.TabIndex = 5;
+            // 
+            // btnNegocio
+            // 
+            this.btnNegocio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNegocio.FlatAppearance.BorderSize = 0;
+            this.btnNegocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNegocio.IconChar = FontAwesome.Sharp.IconChar.BusinessTime;
+            this.btnNegocio.IconColor = System.Drawing.Color.Black;
+            this.btnNegocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNegocio.IconSize = 32;
+            this.btnNegocio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNegocio.Location = new System.Drawing.Point(0, 90);
+            this.btnNegocio.Name = "btnNegocio";
+            this.btnNegocio.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnNegocio.Size = new System.Drawing.Size(233, 45);
+            this.btnNegocio.TabIndex = 2;
+            this.btnNegocio.Text = "Negocio";
+            this.btnNegocio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNegocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNegocio.UseVisualStyleBackColor = true;
+            this.btnNegocio.Click += new System.EventHandler(this.btnNegocio_Click);
             // 
             // Main
             // 
@@ -562,5 +585,6 @@
         private System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelChildForm;
+        private FontAwesome.Sharp.IconButton btnNegocio;
     }
 }

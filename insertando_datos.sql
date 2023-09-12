@@ -505,3 +505,19 @@ BEGIN
 	END
 END
 GO
+
+SELECT id_proveedor, documento, razon_social, correo, telefono, estado FROM Proveedor 
+
+
+/************* CREACION DE TABAL DE NEGOCIO ****************/
+CREATE TABLE Negocio(
+	id_negocio int primary key,
+	nombre varchar(100),
+	ruc varchar(50),
+	direccion varchar(50),
+	logo varbinary(max) null
+) 
+go
+
+select * from Negocio
+INSERT INTO Negocio(id_negocio, nombre, ruc, direccion) VALUES (1, 'URBAN SHOP', '2015487895', 'Av. Los Angeles 12')
