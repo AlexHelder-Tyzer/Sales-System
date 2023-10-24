@@ -521,3 +521,59 @@ go
 
 select * from Negocio
 INSERT INTO Negocio(id_negocio, nombre, ruc, direccion) VALUES (1, 'URBAN SHOP', '2015487895', 'Av. Los Angeles 12')
+
+
+/* PROCESO PARA REGISTRAR UNA COMPRA */
+CREATE TYPE EDetalle_Compra AS TABLE(
+	id_producto int null,
+	precio_compra decimal(10,2) null,
+	precio_venta decimal(10,2) null,
+	cantidad int null,
+	monto_total decimal(10,2) null
+)
+GO
+
+CREATE PROC sp_RegistrarCompra(
+	@id_usuario int,
+	@id_proveedor int,
+	@tipo_documento varchar(500),
+	@numero_documento varchar(50),
+	@monto_total decimal(10,2),
+	@detalle_compra EDetalle_Compra READONLY,
+	@resultado bit output,
+	@mensaje varchar(500) output
+)
+AS
+BEGIN
+	BEGIN TRY
+		declare @id_compra int = 0
+		set @resultado = 1
+		set @mensaje = ''
+
+		BEGIN TRANSACTION registro
+			INSERT INTO Compra(id_usuario, id_proveedor, tipo_documento, numero_documento, monto_total) 
+			VALUES(@id_usuario, @id_proveedor, @tipo_documento, @numero_documento, @monto_total)
+			set @id_compra = SCOPE_IDENTITY() -- devuelve el id del ultimos registro ingresado
+
+			INSERT INTO Detalle_Compra(id_compra, id_producto, precio_compra, precio_venta, cantidad, monto_total)
+			SELECT @id_compra, id_producto, precio_compra, precio_venta, cantidad, monto_total FROM @detalle_compra -- recuprar registros de la tabla tempral
+
+			UPDATE P SET P.stock = P.stock +  DC.cantidad,
+			P.precio_compra = DC.precio_compra,
+			P.precio_venta = DC.precio_venta
+			FROM Producto P INNER JOIN @detalle_compra DC ON DC.id_producto = P.id_producto
+
+		COMMIT TRANSACTION registro
+	END TRY
+	BEGIN CATCH
+		SET @resultado = 0
+		SET @mensaje = ERROR_MESSAGE()
+		ROLLBACK TRANSACTION registro
+	END CATCH
+END
+GO
+
+
+select * FROM COMPRA
+select * from detalle_compra
+select * from Producto

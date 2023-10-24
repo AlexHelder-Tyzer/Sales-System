@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panelMenuLateral = new System.Windows.Forms.Panel();
-            this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.btnAcercaDe = new FontAwesome.Sharp.IconButton();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.btnProveedores = new FontAwesome.Sharp.IconButton();
             this.btnClientes = new FontAwesome.Sharp.IconButton();
             this.panelSubMenuMantenedor = new System.Windows.Forms.Panel();
+            this.btnNegocio = new FontAwesome.Sharp.IconButton();
             this.btnProducto = new FontAwesome.Sharp.IconButton();
             this.btnCategoria = new FontAwesome.Sharp.IconButton();
             this.btnMantenedor = new FontAwesome.Sharp.IconButton();
@@ -50,11 +50,13 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.PictureBox();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnNegocio = new FontAwesome.Sharp.IconButton();
             this.panelMenuLateral.SuspendLayout();
             this.panelSubMenuMantenedor.SuspendLayout();
             this.panelSubMenuVentas.SuspendLayout();
@@ -63,13 +65,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenuLateral
             // 
             this.panelMenuLateral.AutoScroll = true;
             this.panelMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(152)))), ((int)(((byte)(243)))));
-            this.panelMenuLateral.Controls.Add(this.btnCerrarSesion);
             this.panelMenuLateral.Controls.Add(this.btnAcercaDe);
             this.panelMenuLateral.Controls.Add(this.btnReportes);
             this.panelMenuLateral.Controls.Add(this.btnProveedores);
@@ -87,25 +89,6 @@
             this.panelMenuLateral.Name = "panelMenuLateral";
             this.panelMenuLateral.Size = new System.Drawing.Size(250, 643);
             this.panelMenuLateral.TabIndex = 0;
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
-            this.btnCerrarSesion.IconColor = System.Drawing.Color.Black;
-            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrarSesion.IconSize = 32;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 854);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(5, 0, 15, 0);
-            this.btnCerrarSesion.Size = new System.Drawing.Size(233, 45);
-            this.btnCerrarSesion.TabIndex = 12;
-            this.btnCerrarSesion.Text = "Cerrar Sesion";
-            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // btnAcercaDe
             // 
@@ -202,6 +185,27 @@
             this.panelSubMenuMantenedor.Name = "panelSubMenuMantenedor";
             this.panelSubMenuMantenedor.Size = new System.Drawing.Size(233, 150);
             this.panelSubMenuMantenedor.TabIndex = 7;
+            // 
+            // btnNegocio
+            // 
+            this.btnNegocio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNegocio.FlatAppearance.BorderSize = 0;
+            this.btnNegocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNegocio.IconChar = FontAwesome.Sharp.IconChar.BusinessTime;
+            this.btnNegocio.IconColor = System.Drawing.Color.Black;
+            this.btnNegocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNegocio.IconSize = 32;
+            this.btnNegocio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNegocio.Location = new System.Drawing.Point(0, 90);
+            this.btnNegocio.Name = "btnNegocio";
+            this.btnNegocio.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnNegocio.Size = new System.Drawing.Size(233, 45);
+            this.btnNegocio.TabIndex = 2;
+            this.btnNegocio.Text = "Negocio";
+            this.btnNegocio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNegocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNegocio.UseVisualStyleBackColor = true;
+            this.btnNegocio.Click += new System.EventHandler(this.btnNegocio_Click);
             // 
             // btnProducto
             // 
@@ -458,6 +462,8 @@
             // panelBarraTitulo
             // 
             this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(130)))), ((int)(((byte)(243)))));
+            this.panelBarraTitulo.Controls.Add(this.lblUsuario);
+            this.panelBarraTitulo.Controls.Add(this.label1);
             this.panelBarraTitulo.Controls.Add(this.lblTitleChildForm);
             this.panelBarraTitulo.Controls.Add(this.iconCurrentChildForm);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -466,6 +472,24 @@
             this.panelBarraTitulo.Size = new System.Drawing.Size(980, 60);
             this.panelBarraTitulo.TabIndex = 3;
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(827, 21);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(95, 17);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Administrador";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(768, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Usuario: ";
             // 
             // lblTitleChildForm
             // 
@@ -491,11 +515,30 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCerrarSesion);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(250, 565);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(980, 78);
             this.panel1.TabIndex = 4;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
+            this.btnCerrarSesion.IconColor = System.Drawing.Color.Black;
+            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarSesion.IconSize = 32;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(735, 21);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(5, 0, 15, 0);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(233, 45);
+            this.btnCerrarSesion.TabIndex = 13;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // panelChildForm
             // 
@@ -505,27 +548,6 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(980, 505);
             this.panelChildForm.TabIndex = 5;
-            // 
-            // btnNegocio
-            // 
-            this.btnNegocio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNegocio.FlatAppearance.BorderSize = 0;
-            this.btnNegocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNegocio.IconChar = FontAwesome.Sharp.IconChar.BusinessTime;
-            this.btnNegocio.IconColor = System.Drawing.Color.Black;
-            this.btnNegocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNegocio.IconSize = 32;
-            this.btnNegocio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNegocio.Location = new System.Drawing.Point(0, 90);
-            this.btnNegocio.Name = "btnNegocio";
-            this.btnNegocio.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnNegocio.Size = new System.Drawing.Size(233, 45);
-            this.btnNegocio.TabIndex = 2;
-            this.btnNegocio.Text = "Negocio";
-            this.btnNegocio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNegocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNegocio.UseVisualStyleBackColor = true;
-            this.btnNegocio.Click += new System.EventHandler(this.btnNegocio_Click);
             // 
             // Main
             // 
@@ -539,7 +561,7 @@
             this.Controls.Add(this.panelMenuLateral);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1220, 640);
+            this.MinimumSize = new System.Drawing.Size(1220, 682);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -553,6 +575,7 @@
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -579,12 +602,14 @@
         private FontAwesome.Sharp.IconButton btnReportes;
         private FontAwesome.Sharp.IconButton btnProveedores;
         private FontAwesome.Sharp.IconButton btnClientes;
-        private FontAwesome.Sharp.IconButton btnCerrarSesion;
         private System.Windows.Forms.Panel panelBarraTitulo;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelChildForm;
         private FontAwesome.Sharp.IconButton btnNegocio;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnCerrarSesion;
     }
 }

@@ -54,3 +54,5 @@ C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaPresentacion\bin\Debu
 C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaPresentacion\bin\Debug\LinqForEEPlus.dll
 C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaPresentacion\bin\Debug\EPPlus.xml
 C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmNegocio.resources
+C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProveedor.resources
+C:\Users\helde\Desktop\sistema_de_ventas\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProducto.resources

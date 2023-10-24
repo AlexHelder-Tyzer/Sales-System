@@ -41,7 +41,7 @@ namespace CapaPresentacion
                     Usuario oUsuario = new CN_Usuario().Listar().Where(u => u.documento == txtUser.Text && u.clave == txtPassword.Text).FirstOrDefault();
                     if (oUsuario != null)
                     {
-                        Main form = new Main();
+                        Main form = new Main(oUsuario);
                         form.Show();
                         form.FormClosed += Logout; // sobrecargamos el FormClosed con el metodo de cerrar sesion
                         this.Hide();

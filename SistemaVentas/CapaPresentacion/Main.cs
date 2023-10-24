@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -20,8 +21,11 @@ namespace CapaPresentacion
         private IconButton botonActivo;
         private Panel bordeIzqBtn;
 
+        //
+        private static Usuario usuario_actual;
+
         // constructor
-        public Main()
+        public Main(Usuario objusuario = null)
         {
             InitializeComponent();
             customizeDesign();
@@ -33,6 +37,8 @@ namespace CapaPresentacion
             this.ControlBox = false;
             this.DoubleBuffered = true;  // reducir el parpadeo en los graficos del form
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            usuario_actual = objusuario;
         }
 
         /************* METODOS ***********/
@@ -172,6 +178,8 @@ namespace CapaPresentacion
 
         private void btnRegistrarCompra_Click(object sender, EventArgs e)
         {
+            ActivarBoton(sender, RGBColors.color5);
+            openChildForm(new frmCompras(usuario_actual));
             hideSubMenu(); // cerrar el submenu
         }
 
@@ -242,15 +250,20 @@ namespace CapaPresentacion
 
         private void Main_Load(object sender, EventArgs e)
         {
+            List<Permiso> lista_permisos = new CN_Permiso().Listar(usuario_actual.id_usuario);
 
-        }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Estas seguro de Cerrar Sesión?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            foreach (Control button_menu in panelMenuLateral.Controls)
             {
-                this.Close(); // solo ciera el formulario y no todo los formularios y se mostrara el login
+                if (button_menu is IconButton)
+                {
+                    bool encontrado = lista_permisos.Any(m => m.nombre_menu == button_menu.Name); // m cada elemento de la lista
+                    if (encontrado == false)
+                    {
+                        button_menu.Visible = false;
+                    }
+                }
             }
+            lblUsuario.Text = usuario_actual.nombre_completo.ToString();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -282,6 +295,14 @@ namespace CapaPresentacion
         {
             openChildForm(new frmNegocio());
             hideSubMenu(); // cerrar el submenu
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro de Cerrar Sesión?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close(); // solo ciera el formulario y no todo los formularios y se mostrara el login
+            }
         }
     }
 }

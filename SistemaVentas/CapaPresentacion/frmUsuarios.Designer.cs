@@ -238,6 +238,7 @@
             // dgvData
             // 
             this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,6 +265,7 @@
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
+            this.dgvData.RowHeadersWidth = 51;
             this.dgvData.RowTemplate.Height = 25;
             this.dgvData.Size = new System.Drawing.Size(650, 350);
             this.dgvData.TabIndex = 21;
@@ -273,6 +275,7 @@
             // btn_seleccionar
             // 
             this.btn_seleccionar.HeaderText = "";
+            this.btn_seleccionar.MinimumWidth = 6;
             this.btn_seleccionar.Name = "btn_seleccionar";
             this.btn_seleccionar.ReadOnly = true;
             this.btn_seleccionar.Width = 30;
@@ -280,13 +283,16 @@
             // id_usuario
             // 
             this.id_usuario.HeaderText = "IdUsuario";
+            this.id_usuario.MinimumWidth = 6;
             this.id_usuario.Name = "id_usuario";
             this.id_usuario.ReadOnly = true;
             this.id_usuario.Visible = false;
+            this.id_usuario.Width = 125;
             // 
             // documento
             // 
             this.documento.HeaderText = "Nro. Documento";
+            this.documento.MinimumWidth = 6;
             this.documento.Name = "documento";
             this.documento.ReadOnly = true;
             this.documento.Width = 150;
@@ -294,6 +300,7 @@
             // nombre_completo
             // 
             this.nombre_completo.HeaderText = "Nombre Completo";
+            this.nombre_completo.MinimumWidth = 6;
             this.nombre_completo.Name = "nombre_completo";
             this.nombre_completo.ReadOnly = true;
             this.nombre_completo.Width = 180;
@@ -301,6 +308,7 @@
             // correo
             // 
             this.correo.HeaderText = "Correo";
+            this.correo.MinimumWidth = 6;
             this.correo.Name = "correo";
             this.correo.ReadOnly = true;
             this.correo.Width = 150;
@@ -308,41 +316,53 @@
             // clave
             // 
             this.clave.HeaderText = "Clave";
+            this.clave.MinimumWidth = 6;
             this.clave.Name = "clave";
             this.clave.ReadOnly = true;
             this.clave.Visible = false;
+            this.clave.Width = 125;
             // 
             // telefono
             // 
             this.telefono.HeaderText = "Telefono";
+            this.telefono.MinimumWidth = 6;
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
+            this.telefono.Width = 125;
             // 
             // id_rol
             // 
             this.id_rol.HeaderText = "IdRol";
+            this.id_rol.MinimumWidth = 6;
             this.id_rol.Name = "id_rol";
             this.id_rol.ReadOnly = true;
             this.id_rol.Visible = false;
+            this.id_rol.Width = 125;
             // 
             // rol
             // 
             this.rol.HeaderText = "Rol";
+            this.rol.MinimumWidth = 6;
             this.rol.Name = "rol";
             this.rol.ReadOnly = true;
+            this.rol.Width = 125;
             // 
             // estado_valor
             // 
             this.estado_valor.HeaderText = "Estado Valor";
+            this.estado_valor.MinimumWidth = 6;
             this.estado_valor.Name = "estado_valor";
             this.estado_valor.ReadOnly = true;
             this.estado_valor.Visible = false;
+            this.estado_valor.Width = 125;
             // 
             // estado
             // 
             this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
+            this.estado.Width = 125;
             // 
             // label11
             // 
@@ -515,7 +535,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
